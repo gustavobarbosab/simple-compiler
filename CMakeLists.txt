@@ -3,4 +3,4 @@ project(compiladores C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(compiladores exp.c)
+add_executable(compiladores exp.c lexer.c lexer.h)

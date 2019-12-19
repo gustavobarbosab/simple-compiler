@@ -1,0 +1,15 @@
+programa {
+    int gus123=10;
+    int a = 0;
+
+    se (gus123>3) {
+        enquanto(gus123<=0){
+            a = a * gus123;
+        }
+     }
+    senao {
+        faca {
+            a = gus123 - a;
+        } enquanto(gus123>=20)
+     }
+}
