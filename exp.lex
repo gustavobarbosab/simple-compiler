@@ -21,7 +21,15 @@ ID [a-z][a-z0-9]*
 \se { return token(TOK_SE, NADA, yylineno, yylineno); }
 \entao { return token(TOK_ENTAO, NADA, yylineno, yylineno); }
 \senao { return token(TOK_SENAO, NADA, yylineno, yylineno); }
-{ID} { return tokenId(TOK_ID, yytext, yylineno, yylineno); } /*** NÃO SEI COMO RETORNAR ELE ***/
+\enquanto { return token(TOK_ENQUANTO, NADA, yylineno, yylineno); }
+\faca { return token(TOK_FACA, NADA, yylineno, yylineno); }
+{ID} { return tokenId(TOK_ID, yytext, yylineno, yylineno); }
+\> { return token(TOK_RELOP, GT, yylineno, yylineno); }
+\>= { return token(TOK_RELOP, GE, yylineno, yylineno); }
+\< { return token(TOK_RELOP, LT, yylineno, yylineno); }
+\<= { return token(TOK_RELOP, LE, yylineno, yylineno); }
+\== { return token(TOK_RELOP, EQ, yylineno, yylineno); }
+\!= { return token(TOK_RELOP, NE, yylineno, yylineno); }
 [ \t\n]+ { }
 . { return token(TOK_ERRO, NADA, yylineno, yylineno); }
 %%

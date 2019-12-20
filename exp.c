@@ -21,10 +21,11 @@ Token *proximo_token() {
 }
 
 void imprime_token(Token *tok) {
-    if (tok->tipo == TOK_ID)
+    if (tok->tipo == TOK_ID) {
         printf(" [tipo:%d, valor:%s, linha:%d, coluna:%d]\n", tok->tipo, tok->valorId, tok->linha, tok->coluna);
-    else
+    } else {
         printf(" [tipo:%d, valor:%d, linha:%d, coluna:%d]\n", tok->tipo, tok->valor, tok->linha, tok->coluna);
+    }
 }
 
 int main(int argc, char **argv) {
@@ -35,8 +36,10 @@ int main(int argc, char **argv) {
 
     int resultadoAbertura = inicializa_arquivo(arquivo);
 
-    if (resultadoAbertura == FALSE)
+    if (resultadoAbertura == FALSE) {
+        printf("Houve um erro ao abrir o arquivo");
         return 0;
+    }
 
     tok = proximo_token();
 
