@@ -32,8 +32,6 @@ int main(int argc, char **argv) {
     char *arquivo = "/home/usertqi/Documentos/compiladores/exemplo.gb";
     Token *tok;
 
-    printf("\nAnalise Lexica da expressao: ");
-
     int resultadoAbertura = inicializa_arquivo(arquivo);
 
     if (resultadoAbertura == FALSE) {

@@ -15,10 +15,10 @@ ID [a-z][a-z0-9]*
 \int { return token(TOK_TYPE, INT, yylineno, yyout); }
 \float { return token(TOK_TYPE, FLOAT, yylineno, yyout); }
 \char { return token(TOK_TYPE, CHAR, yylineno, yyout); }
-\+ { return token(TOK_OP, SOMA, yylineno, yyout); }
-\- { return token(TOK_OP, SUB, yylineno,yyout); }
-\* { return token(TOK_OP, MULT, yylineno, yyout); }
-\/ { return token(TOK_OP, DIV, yylineno, yyout); }
+\+ { return token(TOK_ARTOP, SOMA, yylineno, yyout); }
+\- { return token(TOK_ARTOP, SUB, yylineno,yyout); }
+\* { return token(TOK_ARTOP, MULT, yylineno, yyout); }
+\/ { return token(TOK_ARTOP, DIV, yylineno, yyout); }
 \( { return token(TOK_ABRE_PAR, NADA, yylineno, yylineno); }
 \) { return token(TOK_FECHA_PAR, NADA, yylineno, yylineno); }
 \{ { return token(TOK_INI_BLOCO, NADA, yylineno, yylineno); }

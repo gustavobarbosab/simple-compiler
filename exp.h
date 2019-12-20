@@ -7,14 +7,13 @@
 #define TOK_ERRO 9999
 #define TOK_NUMERO 0
 #define TOK_ID 1
-#define TOK_OP 2
+#define TOK_ARTOP 2
 #define TOK_RELOP 3
 #define TOK_SE 4
 #define TOK_SENAO 6
 #define TOK_ENQUANTO 7
 #define TOK_FACA 8
 #define TOK_ATRB 9
-#define TOK_ARTOP 10
 #define TOK_ABRE_PAR 12
 #define TOK_FECHA_PAR 13
 #define TOK_INI_BLOCO 14
