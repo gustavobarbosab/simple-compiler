@@ -901,7 +901,7 @@ YY_RULE_SETUP
 case 20:
 YY_RULE_SETUP
 #line 33 "exp.lex"
-{ return tokenId(TOK_ID, yytext, yylineno, yylineno); }
+{ return tokenChar(TOK_ID, yytext, yylineno, yylineno); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
@@ -1980,7 +1980,7 @@ Token *token (int tipo,
  tok.coluna = coluna;
  return &tok;
 }
-Token *tokenId (int tipo,
+Token *tokenChar (int tipo,
               char *valor,
               int linha,
               int coluna) {

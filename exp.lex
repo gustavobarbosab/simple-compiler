@@ -30,7 +30,7 @@ ID [a-z][a-z0-9]*
 \senao { return token(TOK_SENAO, NADA, yylineno, yylineno); }
 \enquanto { return token(TOK_ENQUANTO, NADA, yylineno, yylineno); }
 \faca { return token(TOK_FACA, NADA, yylineno, yylineno); }
-{ID} { return tokenId(TOK_ID, yytext, yylineno, yylineno); }
+{ID} { return tokenChar(TOK_ID, yytext, yylineno, yylineno); }
 \> { return token(TOK_RELOP, GT, yylineno, yylineno); }
 \>= { return token(TOK_RELOP, GE, yylineno, yylineno); }
 \< { return token(TOK_RELOP, LT, yylineno, yylineno); }
@@ -52,7 +52,7 @@ Token *token (int tipo,
  tok.coluna = coluna;
  return &tok;
 }
-Token *tokenId (int tipo,
+Token *tokenChar (int tipo,
               char *valor,
               int linha,
               int coluna) {

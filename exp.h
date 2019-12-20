@@ -53,7 +53,7 @@ typedef struct {
 
 // funcao para criar um token
 extern Token *token();
-extern Token *tokenId();
+extern Token *tokenChar();
 
 // funcao principal do analisador lexico
 extern Token *yylex();
