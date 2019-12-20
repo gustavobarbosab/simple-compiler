@@ -37,6 +37,11 @@
 #define GE 4
 #define GT 5
 
+// tipos definidos
+#define INT 1
+#define FLOAT 2
+#define CHAR 3
+
 // estrutura que representa um token
 typedef struct {
     int tipo;

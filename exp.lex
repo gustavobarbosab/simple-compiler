@@ -12,12 +12,19 @@ ID [a-z][a-z0-9]*
 
 %%
 {NUMERO} {return token(TOK_NUMERO, atoi(yytext), yylineno, yyleng); }
+\int { return token(TOK_TYPE, INT, yylineno, yyout); }
+\float { return token(TOK_TYPE, FLOAT, yylineno, yyout); }
+\char { return token(TOK_TYPE, CHAR, yylineno, yyout); }
 \+ { return token(TOK_OP, SOMA, yylineno, yyout); }
 \- { return token(TOK_OP, SUB, yylineno,yyout); }
 \* { return token(TOK_OP, MULT, yylineno, yyout); }
 \/ { return token(TOK_OP, DIV, yylineno, yyout); }
 \( { return token(TOK_ABRE_PAR, NADA, yylineno, yylineno); }
 \) { return token(TOK_FECHA_PAR, NADA, yylineno, yylineno); }
+\{ { return token(TOK_INI_BLOCO, NADA, yylineno, yylineno); }
+\} { return token(TOK_FIM_BLOCO, NADA, yylineno, yylineno); }
+\; { return token(TOK_PT_VIRG, NADA, yylineno, yylineno); }
+\= { return token(TOK_ATRB, NADA, yylineno, yylineno); }
 \se { return token(TOK_SE, NADA, yylineno, yylineno); }
 \entao { return token(TOK_ENTAO, NADA, yylineno, yylineno); }
 \senao { return token(TOK_SENAO, NADA, yylineno, yylineno); }
