@@ -805,12 +805,12 @@ YY_RULE_SETUP
 case 6:
 YY_RULE_SETUP
 #line 19 "exp.lex"
-{ return token(TOK_PONT, PAR_ESQ, yylineno, yylineno); }
+{ return token(TOK_ABRE_PAR, NADA, yylineno, yylineno); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 20 "exp.lex"
-{ return token(TOK_PONT, PAR_DIR, yylineno, yylineno); }
+{ return token(TOK_FECHA_PAR, NADA, yylineno, yylineno); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
@@ -830,7 +830,7 @@ YY_RULE_SETUP
 case 11:
 YY_RULE_SETUP
 #line 24 "exp.lex"
-{ return token(TOK_ID, yytext, yylineno, yylineno); } /*** NÃO SEI COMO RETORNAR ELE ***/
+{ return tokenId(TOK_ID, yytext, yylineno, yylineno); } /*** NÃO SEI COMO RETORNAR ELE ***/
 	YY_BREAK
 case 12:
 /* rule 12 can match eol */
@@ -1879,4 +1879,13 @@ Token *token (int tipo,
  tok.coluna = coluna;
  return &tok;
 }
-
+Token *tokenId (int tipo,
+              char *valor,
+              int linha,
+              int coluna) {
+ tok.tipo = tipo;
+ tok.valorId = valor;
+ tok.linha = linha;
+ tok.coluna = coluna;
+ return &tok;
+}

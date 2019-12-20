@@ -13,6 +13,7 @@ int inicializa_arquivo(char *nome) {
     if (f == NULL)
         return FALSE;
     yyin = f;
+    return TRUE;
 }
 
 Token *proximo_token() {
@@ -20,17 +21,23 @@ Token *proximo_token() {
 }
 
 void imprime_token(Token *tok) {
-    printf(" [tipo:%d, valor:%d, linha:%d, coluna:%d]\n", tok->tipo, tok->valor, tok->linha, tok->coluna);
+    if (tok->tipo == TOK_ID)
+        printf(" [tipo:%d, valor:%s, linha:%d, coluna:%d]\n", tok->tipo, tok->valorId, tok->linha, tok->coluna);
+    else
+        printf(" [tipo:%d, valor:%d, linha:%d, coluna:%d]\n", tok->tipo, tok->valor, tok->linha, tok->coluna);
 }
 
 int main(int argc, char **argv) {
-    char entrada[200];
+    char *arquivo = "/home/usertqi/Documentos/compiladores/exemplo.gb";
     Token *tok;
 
     printf("\nAnalise Lexica da expressao: ");
 
-    fgets(entrada, 200, stdin);
-    inicializa_string(entrada);
+    int resultadoAbertura = inicializa_arquivo(arquivo);
+
+    if (resultadoAbertura == FALSE)
+        return 0;
+
     tok = proximo_token();
 
     while (tok != NULL) {
