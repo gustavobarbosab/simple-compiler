@@ -26,7 +26,6 @@ ID [a-z][a-z0-9]*
 \; { return token(TOK_PT_VIRG, NADA, yylineno, yylineno); }
 \= { return token(TOK_ATRB, NADA, yylineno, yylineno); }
 \se { return token(TOK_SE, NADA, yylineno, yylineno); }
-\entao { return token(TOK_ENTAO, NADA, yylineno, yylineno); }
 \senao { return token(TOK_SENAO, NADA, yylineno, yylineno); }
 \enquanto { return token(TOK_ENQUANTO, NADA, yylineno, yylineno); }
 \faca { return token(TOK_FACA, NADA, yylineno, yylineno); }

@@ -10,7 +10,6 @@
 #define TOK_OP 2
 #define TOK_RELOP 3
 #define TOK_SE 4
-#define TOK_ENTAO 5
 #define TOK_SENAO 6
 #define TOK_ENQUANTO 7
 #define TOK_FACA 8
